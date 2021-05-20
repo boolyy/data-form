@@ -75,7 +75,7 @@ export default class Forms extends React.Component {
         } else if (!validation.isSupervisorValidValue){
             alert('Please pick a supervisor') 
         //could not get email validation to work
-        } /* else if (this.state.isEmailPreferred && this.state.isPhoneNumberPreferred){
+        } /*else if (this.state.isEmailPreferred && this.state.isPhoneNumberPreferred){
             if(!validation.isEmailPreferredValue){
                 console.log('email is wrong')
             } else if(!validation.isPhoneNumberValidValue){
@@ -106,42 +106,44 @@ export default class Forms extends React.Component {
 
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
-                <h2>Notification Form</h2>
-                <input type = "text" name = "firstName" placeholder = "First Name" onChange = {this.handleChange} />
-                <br/>
-                <input type = "text" name = "lastName" placeholder = "Last Name" onChange = {this.handleChange}/>
-                <br/>
-                <input type = "text" name = "email" placeholder = "Email" onChange = {this.handleChange}/>
-                <br/>
-                <input type = "text" name = "phoneNumber" placeholder = "Phone Number" onChange = {this.handleChange} />
-                <br/>
-                <input 
-                    type = "checkbox" 
-                    name = "isEmailPreferred" 
-                    checked = {this.state.isEmailPreferred}
-                    onChange = {this.handleChange}/> Check if you would prefer Email
-                <br/>
-                <input 
-                    type = "checkbox" 
-                    name = "isPhoneNumberPreferred" 
-                    checked = {this.state.isPhoneNumberPreferred}
-                    onChange = {this.handleChange}/> Check if you would prefer Phone Number
-                <br/>
-                Select Supervisor: <select
-                    value = {this.state.supervisor}
-                    onChange = {this.handleChange}
-                    name = "supervisor"
-                >
-                    {this.state.supervisorArray.map((supervisor) => (
-                            <option value = {supervisor}>{supervisor}</option>
-                        )
-                    )}
-            
-                </select>
-
-                <button> Submit </button>
-            </form>
+            <div className = 'center'>
+                <form onSubmit={this.handleSubmit}>
+                    <h2>Notification Form</h2>
+                    <input type = "text" name = "firstName" placeholder = "First Name" onChange = {this.handleChange} />
+                    <br/>
+                    <input type = "text" name = "lastName" placeholder = "Last Name" onChange = {this.handleChange}/>
+                    <br/>
+                    <input type = "text" name = "email" placeholder = "Email" onChange = {this.handleChange}/>
+                    <br/>
+                    <input type = "text" name = "phoneNumber" placeholder = "Phone Number" onChange = {this.handleChange} />
+                    <br/>
+                    <input 
+                        type = "checkbox" 
+                        name = "isEmailPreferred" 
+                        checked = {this.state.isEmailPreferred}
+                        onChange = {this.handleChange}/> Check if you would prefer Email
+                    <br/>
+                    <input 
+                        type = "checkbox" 
+                        name = "isPhoneNumberPreferred" 
+                        checked = {this.state.isPhoneNumberPreferred}
+                        onChange = {this.handleChange}/> Check if you would prefer Phone Number
+                    <br/>
+                    Select Supervisor: <select
+                        value = {this.state.supervisor}
+                        onChange = {this.handleChange}
+                        name = "supervisor"
+                    >
+                        {this.state.supervisorArray.map((supervisor) => (
+                                <option value = {supervisor}>{supervisor}</option>
+                            )
+                        )}
+                
+                    </select>
+                    <br/>
+                    <button> Submit </button>
+                </form>
+            </div>
         )
     }
 }
