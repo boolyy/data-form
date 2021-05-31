@@ -1,12 +1,13 @@
-import './App.css';
-import Form from "./Components/Form"
+import { ChakraProvider } from "@chakra-ui/react";
+import "./App.css";
+import Form from "./Components/Form";
 
 function App() {
   return (
     //<Form />
-    <div className = "App">
-      <Form/>
-    </div>
+    <ChakraProvider>
+      <Form />
+    </ChakraProvider>
   );
 }
 
